@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            /* color-scheme: light dark; */
+            color: rgba(255, 255, 255, 0.87);
+            background-color: #242424;
+        }
+        main {
+            padding: 12px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.87);
+            margin: 0 auto;
+            margin-top: 8%;
+            text-align: center;
+            max-width: 500px;
+            font-family: sans-serif;
+            border-radius: 14px;
+        }
+        h1 {
+            margin: 30px 0;
+        }
+        label {
+            font-size: 18px;
+        }
+        input {
+            border: 1px solid rgba(255, 255, 255, 0.87);
+            background-color: #3B3B3B;
+            border-radius: 4px;
+        }
+        button {
+            border-radius: 8px;
+            border: 1px solid transparent;
+            padding: 8px 18px;
+            background-color: #1a1a1a;
+            color: rgba(255, 255, 255, 0.87);
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 24px;
+            font-size: 16px;
+        }
+        button:hover {
+            border-color: #646cff;
+        }
+
+        p {
+            margin: 24px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Temperature converter</h1>
+        <label for="input">Enter temperature - </label>
+        <input type="number" id="input">
+        <br>
+        <button id="CtoF" onclick="CtoF()">Celsius to Fahrenheit</button>
+        <button id="FtoC" onclick="FtoC()">Fahrenheit to Celsius</button>
+        <br>
+        <p>Output - <span id="output"></span></p>
+    </main>
+
+
+    <script>
+
+        function CtoF() {
+            var inputCelsius = document.getElementById("input").value;
+            var output = document.getElementById("output");
+
+            var result = (inputCelsius * 1.8) + 32;
+
+            output.innerText = result.toFixed(2) + "F";
+        }
+
+
+        function FtoC() {
+            var inputFahrenheit = document.getElementById("input").value;
+            var output = document.getElementById("output");
+
+            var result = (inputFahrenheit - 32) / 1.8;
+            
+            output.innerText = result.toFixed(2) + "C";
+        }
+
+    </script>
+</body>
+</html>
